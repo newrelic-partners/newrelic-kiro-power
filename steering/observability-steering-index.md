@@ -9,6 +9,9 @@ Comprehensive guidance for querying New Relic observability data using NRQL thro
 | [nrql-guide.md](nrql-guide.md) | Comprehensive NRQL guide — syntax, event types, clauses, advanced patterns, and anti-patterns |
 | [query-patterns.md](query-patterns.md) | Query patterns — golden signals, logs, tracing, transactions, and infrastructure |
 | [troubleshooting-workflows.md](troubleshooting-workflows.md) | Troubleshooting workflows — step-by-step investigations for errors, performance, dependencies, and alerts |
+| [kafka.md](kafka.md) | Kafka — questions and root-cause investigation for nri-kafka, OpenTelemetry, AWS MSK, and Confluent Cloud; use instead of the general workflows when Kafka is the subject |
+| [kafka-queries.md](kafka-queries.md) | Kafka NRQL — ready queries for each provider, read from `kafka.md` |
+| [kafka-failure-modes.md](kafka-failure-modes.md) | Kafka failure modes — what each fired health concept can mean, read from `kafka.md` |
 
 ---
 

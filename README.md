@@ -17,6 +17,7 @@ With this power, Kiro can investigate production behavior directly from your IDE
 - **Incident Investigation Workflows**: Investigate production errors, regressions, and alert spikes
 - **Entity-Aware Troubleshooting**: Scope by application, service, host, or entity GUID
 - **Alert & Change Correlation**: Connect incidents with deployments and related events
+- **Kafka Troubleshooting**: Investigate consumer lag, partitions, and broker health for nri-kafka, OpenTelemetry, AWS MSK, and Confluent Cloud
 - **AI-First Experience**: Ask natural language questions and let Kiro choose the right tools
 
 ## Installation
@@ -59,6 +60,12 @@ Use prompts like:
 - Which service has the highest error rate right now?
 - Trend CPU and memory for hosts behind this service
 
+### 5 - Troubleshoot Kafka
+Use prompts like:
+- Why is consumer lag growing for the `order-events` consumer group?
+- Are any partitions under-replicated or offline on `prod-kafka`?
+- Which topics on `prod-kafka` had the highest throughput in the last hour?
+
 ## Steering Files
 
 The power includes structured steering content in [steering/observability-steering-index.md](steering/observability-steering-index.md), with supporting guides:
@@ -66,6 +73,7 @@ The power includes structured steering content in [steering/observability-steeri
 - [steering/nrql-guide.md](steering/nrql-guide.md)
 - [steering/query-patterns.md](steering/query-patterns.md)
 - [steering/troubleshooting-workflows.md](steering/troubleshooting-workflows.md)
+- [steering/kafka.md](steering/kafka.md), with [steering/kafka-queries.md](steering/kafka-queries.md) and [steering/kafka-failure-modes.md](steering/kafka-failure-modes.md)
 
 ## Resources
 

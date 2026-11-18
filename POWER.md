@@ -2,7 +2,7 @@
 name: "newrelic"
 displayName: "New Relic Observability"
 description: "Query logs, metrics, traces, and events from New Relic using NRQL for production debugging and performance analysis"
-keywords: ["newrelic", "observability", "monitoring", "nrql", "logs", "metrics", "apm", "traces", "alerts"]
+keywords: ["newrelic", "observability", "monitoring", "nrql", "logs", "metrics", "apm", "traces", "alerts", "kafka", "consumer lag", "msk", "confluent"]
 author: "New Relic"
 ---
 
@@ -29,6 +29,9 @@ The New Relic Observability Power provides comprehensive access to your New Reli
 
 This power has the following steering files:
 - **steering** - Comprehensive NRQL guide with query patterns, golden signals, and troubleshooting workflows
+- **kafka.md** - Kafka questions and root-cause investigation for nri-kafka, OpenTelemetry, AWS MSK and Confluent Cloud: consumer lag, under-replicated or offline partitions, brokers, topic throughput, and Kafka alerts. Read it instead of the general workflows whenever Kafka is the subject. Not for non-Kafka queues such as RabbitMQ or SQS.
+- **kafka-queries.md** - Kafka NRQL for each provider. `kafka.md` says when to read it.
+- **kafka-failure-modes.md** - What each fired Kafka health concept can mean and how to tell the causes apart. `kafka.md` says when to read it.
 
 ## Available MCP Servers
 
@@ -114,19 +117,25 @@ The MCP server provides 30+ tools organized into 6 categories: Discovery, Data A
 22. **analyze_golden_metrics** - Analyze golden metrics
     - Evaluate throughput, response time, error rate, saturation
 
-23. **analyze_kafka_metrics** - Analyze Kafka metrics
-    - Examine consumer lag, producer throughput, message latency, partition balance
+23. **analyze_kafka_client_metrics** - Analyze a Kafka producer or consumer application's client metrics
+    - Request and fetch latency, I/O wait, poll timing, producer errors and retries, for APM or OpenTelemetry apps
 
-24. **analyze_threads** - Analyze thread metrics
+24. **analyze_kafka_health** - Run a Kafka health sweep
+    - Consumer lag, partitions, brokers, controller, JVM and host signals, for nri-kafka, OpenTelemetry, AWS MSK or Confluent Cloud
+
+25. **analyze_kafka_related_entities** - Map entities around a Kafka component
+    - Cluster, brokers, topics, producer and consumer apps, and broker hosts, up to 3 hops
+
+26. **analyze_threads** - Analyze thread metrics
     - Review thread state, CPU usage, memory consumption
 
-25. **analyze_transactions** - Analyze transaction performance
+27. **analyze_transactions** - Analyze transaction performance
     - Identify slow and error-prone transactions
 
-26. **list_garbage_collection_metrics** - List GC and memory metrics
+28. **list_garbage_collection_metrics** - List GC and memory metrics
     - Get garbage collection metrics for JVM applications
 
-27. **list_recent_logs** - List recent logs
+29. **list_recent_logs** - List recent logs
     - Fetch recent logs for specified account and entity GUID
 
 **Advanced Analysis (tag: advanced-analysis):**
