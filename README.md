@@ -8,7 +8,6 @@ Production observability power for investigating incidents, debugging performanc
 
 With this power, Kiro can investigate production behavior directly from your IDE by querying New Relic telemetry through an OAuth-based MCP server.
 
-> Note: The New Relic MCP server is currently in preview. For access enablement steps, follow the [New Relic MCP documentation](https://docs.newrelic.com/docs/agentic-ai/mcp/overview/).
 
 ## Features
 
